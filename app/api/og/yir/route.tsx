@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 import { NextRequest } from "next/server";
 
+export const dynamic = "force-dynamic";
 
 export async function GET(req: NextRequest) {
   const inter = await fetch(
