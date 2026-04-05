@@ -210,7 +210,9 @@ export const authOptions: NextAuthOptions = {
         httpOnly: true,
         sameSite: "lax",
         path: "/",
-        domain: VERCEL_DEPLOYMENT ? ".papermark.com" : undefined,
+        domain: VERCEL_DEPLOYMENT
+          ? process.env.NEXTAUTH_COOKIE_DOMAIN ?? undefined
+          : undefined,
         secure: VERCEL_DEPLOYMENT,
       },
     },
